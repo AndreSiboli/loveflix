@@ -1,0 +1,26 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    font-size: 1.1em;
+  }
+
+  &.v1{
+    background: var.$neutral_color_100;
+    color: var.$secundary_color;
+  }
+
+  &.v3 {
+    background: var.$neutral_color_700;
+    color: var.$primary_color;
+  }
+}

@@ -1,0 +1,32 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.describe {
+  &_title {
+    font-size: calc(1.75em + 1vw);
+    line-height: 2em;
+  }
+
+  &_information {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+
+    .information_date {
+      time {
+        font-size: 1em;
+        color: var.$neutral_color_300;
+      }
+    }
+  }
+
+  &_text {
+    margin-top: 1em;
+    display: -webkit-box;
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

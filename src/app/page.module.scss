@@ -1,0 +1,35 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.main {
+  width: 100%;
+  min-height: 100dvh;
+  color: var.$primary_color;
+
+  &_container {
+    display: flex;
+    gap: 3em;
+
+    @media (max-width: 1020px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &_information {
+    flex: 0 0 50%;
+    margin-top: 3em;
+    padding: 0 2em;
+  }
+
+  &_image {
+    flex: 1 1 50%;
+    height: 100vh;
+    max-height: 750px;
+
+    @media (max-width: 1020px) {
+      flex: none;
+      width: 100%;
+      max-height: 500px;
+    }
+  }
+}

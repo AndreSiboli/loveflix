@@ -1,0 +1,115 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: #0005;
+  padding: 1em;
+  z-index: 102;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease-in-out;
+
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+
+    .about_container {
+      transform: scale(1);
+    }
+  }
+
+  &_container {
+    max-width: 500px;
+    width: 100%;
+    aspect-ratio: 10/11;
+    position: relative;
+    transform: scale(0.5);
+    transition: transform 0.25s ease-in-out;
+    background: var.$neutral_color_800;
+    border-radius: 0.5em;
+    color: #fff;
+    overflow: auto;
+
+    border-radius: 0.5em;
+
+    .about_image {
+      max-height: 300px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        z-index: 2;
+        background: linear-gradient(
+            40deg,
+            var.$neutral_color_800 13.16%,
+            #0000 25%
+          ),
+          linear-gradient(
+            0deg,
+            var.$neutral_color_800 3.91%,
+            transparent 20.26%
+          );
+      }
+    }
+
+    .about_info {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+
+      h1 {
+        font-size: calc(1.5em + 0.35vw);
+      }
+
+      .info_tags {
+        display: flex;
+        gap: 0.25em;
+        flex-wrap: wrap;
+        margin-top: 0.25em;
+      }
+
+      .info_description {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  .button {
+    background: var.$neutral_color_100;
+    padding: 0.75em;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 5px #0003;
+
+    @include mix.OnlyPc {
+      &:hover {
+        transform: scale(0.95);
+
+        svg {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    svg {
+      display: block;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}

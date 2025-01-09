@@ -1,0 +1,21 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.select {
+  padding: auto 2em;
+  cursor: pointer;
+  background: var.$neutral_color_100;
+
+  &:focus {
+    outline: none;
+  }
+
+  option {
+    cursor: pointer;
+    padding: 1em;
+
+    &:focus{
+        background: red;
+    }
+  }
+}

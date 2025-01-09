@@ -1,0 +1,27 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.moments {
+  margin-top: 2em;
+
+  &_title {
+    h2 {
+      font-size: normal;
+    }
+  }
+
+  &_images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75em;
+    width: 100%;
+    margin-top: 1em;
+
+    .image {
+      &_container {
+        position: relative;
+        aspect-ratio: 10/11;
+      }
+    }
+  }
+}

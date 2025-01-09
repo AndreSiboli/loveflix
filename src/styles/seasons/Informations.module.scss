@@ -1,0 +1,15 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.data {
+  &_container {
+    max-width: 550px;
+    width: 100%;
+  }
+
+  &_buttons {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+  }
+}

@@ -1,0 +1,91 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.details {
+  transition: background 0.25s ease-in-out;
+  height: fit-content;
+  border-bottom: 1px solid var.$neutral_color_900;
+  position: relative;
+  border-radius: 0.5em;
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid var.$neutral_color_100;
+    background: var.$neutral_color_100;
+    color: #000;
+
+    border-radius: 0.25em;
+    transition: background 0.25s ease-in-out;
+
+    .info_wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      p {
+        font-size: 0.95em;
+      }
+    }
+
+    .info_button {
+      position: relative;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &_content {
+    max-height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+    position: absolute;
+    top: 110%;
+    z-index: 98;
+    background: var.$neutral_color_100;
+    color: #000;
+
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .details_option {
+        cursor: pointer;
+        padding: 0.5em;
+        font-size: 0.95em;
+
+        @include mix.OnlyPc {
+          &:hover {
+            background: var.$neutral_color_200;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    @include mix.OnlyPc {
+      &:hover {
+        background: var.$neutral_color_200;
+      }
+    }
+
+    .details_content {
+      max-height: 500px;
+    }
+
+    .details_info {
+      .info_button {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.header {
+  padding: 1em 1em;
+  z-index: 99;
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_start {
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+
+    &_logo {
+      padding: 0;
+    }
+
+    &_links {
+      display: flex;
+      gap: 1em;
+
+      a {
+        color: var.$primary_color;
+        word-spacing: 0.025em;
+      }
+    }
+  }
+
+  &_end {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    &_search,
+    &_bell {
+      button {
+        background: transparent;
+        border: none;
+        color: var.$primary_color;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        svg {
+          display: block;
+        }
+      }
+    }
+
+    &_user {
+      width: 20px;
+      aspect-ratio: 1/1;
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.tag {
+  padding: 0.25em;
+  background: var.$neutral_color_600;
+  color: var.$neutral_color_200;
+  width: fit-content;
+  border-radius: 0.25em;
+
+  p {
+    font-size: 0.95em;
+  }
+}
